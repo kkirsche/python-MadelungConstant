@@ -1,0 +1,33 @@
+# Madelung program using while loops and brute force to calculate the Madelung constant of for Na in table salt.
+# This program may be slow, but doesn't use a lot of memory. Generally inefficient.
+
+# The wikipedia page explains the Madelung constant:
+# http://en.wikipedia.org/wiki/Madelung_constant
+
+# Response to Python for Physicists, chapter 2 exercise 2.8 (pg. 73)
+
+from numpy import sqrt
+
+try:
+  L = int(raw_input("Enter the furthest atom distance (100) "))
+except:
+	print ("Furthest distance is 100")
+	L = 100
+
+M = 0.0
+
+i = -L
+while i <= L:
+	j = -L
+	while j <= L:
+		k = -L
+		while k <= L:
+			if (i==0) * (j==0) * (k==0):
+				k +=1
+			else:
+				sign = (-1)**(i+j+k)
+				M += float(sign)/(i**2+j**2+k**2)**0.5 #**0.5 = sqrt of a number
+				k +=1
+		j += 1
+	print(i, M) #print the iteration and the constant for the iteration
+	i += 1
