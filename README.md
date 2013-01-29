@@ -9,3 +9,8 @@ The prompt is:
 Write a program to calculate and print the Madelung constant for sodium chloride.
 Use as large a value of L as you can, while still having your program run in reasonable
 time—say in a minute or less.
+
+madelung.py is the fastest, but consumes a large amount of memory
+madelung-v2-betterExplanation.py explains some of what is happening and why, but isn't as fast.
+
+The last is a while loop version that is highly inefficient. 
